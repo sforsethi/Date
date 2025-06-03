@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Beautiful Nilfa ❤️</title>
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 60px 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+        }
+        
+        .photo-frame {
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .yes-button {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(238, 90, 36, 0.3);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        .yes-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(238, 90, 36, 0.4);
+            background: linear-gradient(135deg, #ff5252, #d63031);
+        }
+        
+        .confetti {
+            position: fixed;
+            font-size: 25px;
+            pointer-events: none;
+            z-index: 1000;
+            animation: confetti-fall 3s linear forwards;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        .couple-photo {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .couple-photo:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .title {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 3.5rem;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: 400;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #764ba2;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        
+        .highlight {
+            color: #667eea;
+            font-weight: 600;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        
+        .date-invite {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px 35px;
+            border-radius: 20px;
+            margin: 30px 0;
+            font-size: 1.2rem;
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-weight: 500;
+        }
+        
+        .date-invite:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        .sparkle {
+            display: inline-block;
+            animation: sparkle 2s ease-in-out infinite;
+            margin: 0 5px;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+        }
+        
+        .footer {
+            margin-top: 40px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.8rem;
+            color: #667eea;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @media (max-width: 768px) {
+            .title { font-size: 2.5rem; }
+            .subtitle { font-size: 1.2rem; }
+            .card { padding: 40px 30px; margin: 20px; }
+            .date-invite { padding: 20px 25px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hearts" id="hearts"></div>
+        
+        <div class="card pulse">
+            <div id="photo-placeholder" class="photo-frame">
+                <!-- Photo will be loaded here -->
+            </div>
+            <h1 class="title">For My Beautiful Nilfa</h1>
+            <p class="subtitle">From your loving Raghav ❤️</p>
+            
+            <div class="message">
+                <p>My dearest <span class="highlight">Nilfa</span>,</p>
+                <br>
+                <p>Every day with you feels like a celebration, but today is extra special because it marks another beautiful milestone in our journey together. Our engagement anniversary reminds me of the moment I knew I wanted to spend forever with you.</p>
+                <br>
+                <p>You fill my world with <span class="highlight">love, laughter, and endless joy</span>. Every smile you give me, every moment we share, makes me fall in love with you all over again.</p>
+            </div>
+            
+            <button class="date-invite" onclick="showSurprise()">
+                <span class="sparkle">✨</span>
+                I have something special to ask you...
+                <span class="sparkle">✨</span>
+            </button>
+            
+            <div id="surprise" style="display: none; margin-top: 30px;">
+                <div style="background: linear-gradient(135deg, #ffeaa7, #fab1a0); padding: 30px; border-radius: 20px; color: #2d3436;">
+                    <h2 style="font-family: Georgia, 'Times New Roman', serif; font-size: 2.2rem; margin-bottom: 20px; color: #e17055; font-style: italic;">Will you go on a date with me?</h2>
+                    <p style="font-size: 1.3rem; margin-bottom: 15px;"><strong>When:</strong> Wednesday, June 4th, 2025</p>
+                    <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px;">Let's make this evening as magical as the day we got engaged. Just you, me, and all the time in the world to celebrate our love. ✨</p>
+                    
+                    <button class="yes-button" onclick="celebrate()">
+                        💕 Yes, my love! 💕
+                    </button>
+                </div>
+            </div>
+            
+            <div class="footer">
+                Forever yours,<br>
+                Raghav 💕
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load the couple's photo
+        async function loadPhoto() {
+            try {
+                const imageData = await window.fs.readFile('image.jpg');
+                const base64String = btoa(String.fromCharCode(...imageData));
+                const imgElement = document.createElement('img');
+                imgElement.src = `data:image/jpeg;base64,${base64String}`;
+                imgElement.alt = 'Raghav and Nilfa - Our Beautiful Moment';
+                imgElement.className = 'couple-photo';
+                document.getElementById('photo-placeholder').appendChild(imgElement);
+            } catch (error) {
+                console.log('Photo loading error:', error);
+                // Fallback: show a heart icon if image fails to load
+                const heartDiv = document.createElement('div');
+                heartDiv.innerHTML = '💕';
+                heartDiv.style.fontSize = '120px';
+                heartDiv.style.margin = '20px 0';
+                document.getElementById('photo-placeholder').appendChild(heartDiv);
+            }
+        }
+
+        // Load photo when page loads
+        window.addEventListener('load', loadPhoto);
+        
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 6 + 's';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.getElementById('hearts').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+        
+        // Create hearts periodically
+        setInterval(createHeart, 1000);
+        
+        // Initial hearts
+        for(let i = 0; i < 5; i++) {
+            setTimeout(createHeart, i * 200);
+        }
+        
+        function celebrate() {
+            // Create massive confetti celebration
+            const confettiItems = ['💎', '❤️', '💕', '💖', '💗', '💙', '💜', '🧡', '💛', '💚', '💝', '💘', '💌', '💐', '🌹', '✨', '⭐', '🌟', '💫', '🎉'];
+            
+            // Create 100 pieces of confetti
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.innerHTML = confettiItems[Math.floor(Math.random() * confettiItems.length)];
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.animationDelay = Math.random() * 2 + 's';
+                    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    document.body.appendChild(confetti);
+                    
+                    // Remove confetti after animation
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }, i * 50);
+            }
+            
+            // Change button text and disable it
+            const button = event.target;
+            button.innerHTML = '🎉 Perfect! Can\'t wait! 🎉';
+            button.style.background = 'linear-gradient(135deg, #00b894, #00a085)';
+            button.disabled = true;
+            
+            // Show celebration message
+            setTimeout(() => {
+                const celebrationDiv = document.createElement('div');
+                celebrationDiv.innerHTML = `
+                    <div style="
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background: rgba(255, 255, 255, 0.95);
+                        padding: 40px;
+                        border-radius: 20px;
+                        text-align: center;
+                        font-size: 1.5rem;
+                        color: #e17055;
+                        font-family: Georgia, 'Times New Roman', serif;
+                        font-style: italic;
+                        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                        z-index: 2000;
+                        animation: pulse 2s ease-in-out infinite;
+                    ">
+                        🎊 It's a date! 🎊<br>
+                        <span style="font-size: 1.2rem; color: #667eea;">Wednesday can't come soon enough! 💕</span>
+                    </div>
+                `;
+                document.body.appendChild(celebrationDiv);
+                
+                // Remove celebration message after 4 seconds
+                setTimeout(() => {
+                    celebrationDiv.remove();
+                }, 4000);
+            }, 1000);
+        }
+        
+        function showSurprise() {
+            const surprise = document.getElementById('surprise');
+            const button = document.querySelector('.date-invite');
+            
+            button.style.display = 'none';
+            surprise.style.display = 'block';
+            surprise.style.animation = 'pulse 0.5s ease-in-out';
+            
+            // Add some celebration hearts
+            for(let i = 0; i < 10; i++) {
+                setTimeout(createHeart, i * 100);
+            }
+        }
+    </script>
+</body>
+</html>
